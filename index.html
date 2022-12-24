@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial.scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>BLOG INVOPE II - Unidad I</title>
+</head>
+<body>
+    <header>
+        <div id="container">
+            <h1>PROGRAMACIÓN DINÁMICA</h1>
+        </div>
+        <section class="wrapper">
+            <nav>
+                <ul >
+                    <li><a href="">Unidad I</a></li>
+                    <li><a href="">Unidad II</a></li>
+                    <li><a href="">Unidad III</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <br><br><br>
+    <section id="contenido">
+        <article class="article">
+            <h1>PROGRAMACIÓN DINÁMICA</h1><br>
+            <p>La programación dinámica es un técnica muy útil para la toma de decisiones de problemas complejos que pueden ser discretizados y secuencializados, proporciona un procedimiento sistemático para determinar la combinación óptima de decisiones; este método no tiene una formulación estándar ya que las ecuaciones que se planteen responden al problema específico.</p>
+            <p>Esta técnica es muy útil para la reducción el tiempo de ejecución de un algoritmo mediante la utilización de subproblemas y subestructuras óptimas.</p>
+            <br><p><strong>TÉRMINOS</strong></p><br>
+            <p><strong>ESTADO:</strong> es el que refleja la condición o estado de las restricciones que enlazan las etapas. Representa la “liga” entre etapas de tal manera que cuando cada etapa se optimiza por separado la decisión resultante esautomáticamente factible para el problema completo.</p><br>
+            <P><strong>ETAPA:</strong> es la parte del problema que posee un conjuntode alternativas mutuamente excluyentes, de las cuales seseleccionará la mejor alternativa.</P><br>
+            <br>
+        </article>
+
+        <article class="article">
+            <h2>Determinística</h2><br>
+            <h3>Ejercicio 01</h3><br>
+            <p>Se tiene que llegar desde la ciudad A hasta la ciudad J pasando por ciudades de control, hallar la ruta que sea más corta. Use programación dinámica. Como eestamos buscando la ruta más corta, entonces lo que nos importan son los valores pequeños, o sea los menores valores posibles.</p><br>
+            <img src="/UnidadI/determ1.png" alt="" width="1000"><br>
+            <p>Ya que tenemos el gráfico, debemos separarlo en etapas y empezar a trabajar desde la última hasta la primera.</p><br>
+            <img src="/UnidadI/determ2.png" alt="" width="1000"><br>
+            <p>La primera etapa que se trabaja, solo tiene sus datos respectivos, ya que no hay una estapa anterior a esta.</p><br>
+            <img src="/UnidadI/determ3.png" alt="" width="1000"><br>
+            <p>Preparando los datos para la etapa 3, sacamos datos respectivos de la tercera etapa.</p><br>
+            <img src="/UnidadI/determ4.png" alt="" width="1000"><br>
+            <p>Hacemos las conexiones combinando las tablas, por ejemplo  en la celda donde caen E,H; debemos tomar el valor de la conexión anterior de H, en este caso 5; y el valor de E que se conecta a H, que es 3.</p><br>
+            <p>Repetiremos el proceso hasta llenar todas las celdas, luego en f3(s) colocamos el menor valor de la fila, y en X3 se coloca de donde procede el valor.</p><br>
+            <img src="/UnidadI/determ5.png" alt="" width="1000"><br>
+            <p>Repetimos el proceso anterior, para f2(s).</p><br>
+            <img src="/UnidadI/determ6.png" alt="" width="1000"><br>
+            <p>Repetimos el procedimiento, para f1(s).</p><br>
+            <img src="/UnidadI/determ7.png" alt="" width="1000"><br>
+            <p>Una vez que tenemos nuestras tablas hechas, vamos desde 1 hasta 4, siguiendo la ruta.</p><br>
+            <img src="/UnidadI/determ8.png" alt="" width="1000"><br>
+        </article>
+
+        <article class="article">
+            <h2>Probabilística</h2><br>
+            <h3>Ejercicio 02</h3><br>
+            <p>Para armar un pc se necesitan de 4 componentes fundamentales, cada uno de los cuales debe trabajar para que funcione. La confiabilidad de la pc se puede mejorar si se instalan varias unidades paralelas
+                en uno o más de los componentes. La siguiente tabla muestra la probabilidad de que los respectivos componentes funcionen entre si consta de una, dos o tres unidades paralelas.
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Paralelas</th>
+                        <th colspan="4">Probabilidad de Funcionamiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>Componente 1</td>
+                        <td>Componente 2</td>
+                        <td>Componente 3</td>
+                        <td>Componente 4</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0.5</td>
+                        <td>0.6</td>
+                        <td>0.7</td>
+                        <td>0.5</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0.6</td>
+                        <td>0.7</td>
+                        <td>0.8</td>
+                        <td>0.7</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                        <td>0.9</td>
+                        <td>0.9</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>La siguiente tabla presenta el costo de instalar una, dos o tres unidades paralelas en los componentes respectivos:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Paralelas</th>
+                        <th colspan="4">Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>Componente 1</td>
+                        <td>Componente 2</td>
+                        <td>Componente 3</td>
+                        <td>Componente 4</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>500</td>
+                        <td>1000</td>
+                        <td>500</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1000</td>
+                        <td>2000</td>
+                        <td>1500</td>
+                        <td>1500</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>1500</td>
+                        <td>2500</td>
+                        <td>2000</td>
+                        <td>2000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Por las limitaciones de presupuesto, se puede gastar como máximo S/5000.</p><br>
+            <p>Determine la cantidad de unidades paralelas que se pueden instalar en cada uno de los 4 componentes para maximizar la probabilidad de que el sistema funcione.</p>
+            <p>Ordenando los datos en un gráfico del componente 1:</p><br>
+            <img src="/UnidadI/Proba1.png" alt="" width="1000"><br>
+            <p>Ahora con el componente 2, y complementamos con el gráfico anterior. Y vemos que en el punto J, nos da 1000 pero para el siguiente gráfico, el mínmo valor es 1000, lo cual imposibilitaría poder agregar un componente 3 a la pc. Por tanto, se descarta.</p><br>
+            <img src="/UnidadI/Proba2.png" alt="" width="1000"><br>
+            <p>Ahora el componente 3, y volvemos a tener resultados parecidos al anterior, el mínmo valor del componente 4 es 1000, así que los puntos P(500) y Q(0) se van, el punto O(1000), no se va ya que, el componente 4 es el último y no necesitaremos más fondos.</p><br>
+            <img src="/UnidadI/Proba3.png" alt="" width="1000"><br>
+            <p>Así quedaría el gráfico con las probabilidades y fondos disponibles/sobrantes.</p><br>
+            <img src="/UnidadI/Proba4.png" alt="" width="1000"><br>
+            <p>Empezamos desde n=4, donde solo deberemos colocar los valores respectivos, recordando que debemos colocar el mayor ya que, estamos buscando la mayor probabilidad disponible.</p><br>
+            <img src="/UnidadI/Proba5.png" alt="" width="1000"><br>
+            <p>Ya en n=3, es cuando debemos fijarnos bien en los que recibimos de la tabla anterior y los datos que se reciben de sus conexiones respectivas.</p><br>
+            <img src="/UnidadI/Proba6.png" alt="" width="1000"><br>
+            <p>En n=2, sería igual que en n=3.</p><br>
+            <img src="/UnidadI/Proba7.png" alt="" width="1000"><br>
+            <p>Finalmente en n=1, todos los datos son enviados a un solo punto A, y que nos dará nuestras probabilidades finales</p><br>
+            <img src="/UnidadI/Proba8.png" alt="" width="1000"><br>
+            <p>Una vez que tenemos todas las tablas, ya podemos hallar la ruta crítica a seguir, así como la cantidad de componentes que debemos elegir y el total que nos sobraría.</p><br>
+            <img src="/UnidadI/Proba9.png" alt="" width="1000"><br>
+
+        </article>
+        
+    </section>
+</body>
+</html>
